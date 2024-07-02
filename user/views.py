@@ -15,3 +15,15 @@ def check_status(request):
     except Exception as e:
         print("Error message    :   ",e)
 
+@api_view(['GET'])
+def say_hello(request):
+    try:
+        
+        return JsonResponse(
+            {
+                "status": "Working"
+            }
+        )
+    except Exception as e:
+        print("Error message    :   ",e)
+
