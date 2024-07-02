@@ -6,7 +6,6 @@ from django.http import JsonResponse
 @api_view(['GET'])
 def check_status(request):
     try:
-        
         return JsonResponse(
             {
                 "status": "Working"
@@ -16,12 +15,24 @@ def check_status(request):
         print("Error message    :   ",e)
 
 @api_view(['GET'])
-def say_hello(request):
+def say_hello(request, name):
     try:
-        
         return JsonResponse(
             {
-                "status": "Working"
+                "message": f"Hello {name}"
+            }
+        )
+    except Exception as e:
+        print("Error message    :   ",e)
+
+@api_view(['GET'])
+def say_bye(request, name):
+    try:
+        print("request.data")
+        print(request.data)
+        return JsonResponse(
+            {
+                "message": f"Bye  {name}"
             }
         )
     except Exception as e:
