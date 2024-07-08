@@ -20,10 +20,10 @@ jobs:
       - name: Check Python Version
         run: python3 --version # Verify the Python version available on the runner
 
-      - name: Install Dependencies
-        run: |
-          python3 -m pip install --upgrade pip
-          pip install -r requirements.txt
+      # - name: Install Dependencies
+      #   run: |
+      #     python3 -m pip install --upgrade pip
+      #     pip install -r requirements.txt
 
       - name: Run Tests
         run: |
