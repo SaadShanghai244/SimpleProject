@@ -12,24 +12,19 @@ jobs:
     strategy:
       max-parallel: 4
       matrix:
-        python-version: [3.12.3]
+        python-version: [3.12.3] # This should match the Python version installed on EC2
 
     steps:
       - uses: actions/checkout@v4
 
       - name: Check Python Version
-        run: python3 --version # Verify the default Python version
-
-      - name: Set up Python ${{ matrix.python-version }}
-        uses: actions/setup-python@v1
-        with:
-          python-version: ${{ matrix.python-version }}
+        run: python --version # Verify the Python version available on the runner
 
       - name: Install Dependencies
         run: |
-          python3 -m pip install --upgrade pip  
+          python -m pip install --upgrade pip
           pip install -r requirements.txt
 
       - name: Run Tests
         run: |
-          python3 manage.py test
+          python manage.py test
