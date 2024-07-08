@@ -18,13 +18,13 @@ jobs:
       - uses: actions/checkout@v4
 
       - name: Check Python Version
-        run: python --version # Verify the Python version available on the runner
+        run: python3 --version # Verify the Python version available on the runner
 
       - name: Install Dependencies
         run: |
-          python -m pip install --upgrade pip
+          python3 -m pip install --upgrade pip
           pip install -r requirements.txt
 
       - name: Run Tests
         run: |
-          python manage.py test
+          python3 manage.py test
