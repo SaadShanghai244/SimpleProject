@@ -3,3 +3,5 @@ first_project/__pycache__
 user/__pycache__
 
 user/migrations .
+
+.github/workflows/dummy.yml
